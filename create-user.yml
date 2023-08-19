@@ -1,0 +1,14 @@
+---
+  - name: user create playbook
+    hosts: prod
+    vars_files:
+      user_list.yml
+    tasks:
+      - name: user creation
+        ansible.builtin.user:
+          name: "{{ item }}"
+          groups: devops
+          state: present
+        loop: "{{ users }}"
+        when: item=='greg'
+        
