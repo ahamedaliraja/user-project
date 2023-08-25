@@ -1,0 +1,15 @@
+---
+- name: User creation
+  hosts: prod
+  become: yes
+  vars_files:
+    user_list.yml
+  tasks:
+    - name: User creation play
+      ansible.builtin.user:
+        name: "{{ item }}"
+        group: devops
+        state: present
+      loop: "{{ users }}"
+      when: item=='stave'
+
