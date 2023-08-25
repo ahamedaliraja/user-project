@@ -1,17 +1,10 @@
 ---
 ansible-navigator:
-  ansible:
-    config:
-      help: false
-    inventory:
-      entries:
-      - /home/student/EX374/create_user/inventory
   execution-environment:
-    container-engine: podman
-    enabled: true
     image: ee-supported-rhel8:latest
     pull:
       policy: missing
   playbook-artifact:
     enable: false
+  mode: stdout
 
