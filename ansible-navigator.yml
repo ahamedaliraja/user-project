@@ -1,0 +1,14 @@
+---
+ansible-navigator:
+  ansible:
+    config:
+      help: false
+  execution-environment:
+    image: ee-supported-rhel8:latest
+    pull:
+      policy: missing
+  mode: stdout
+  playbook-artifact:
+    enable: false
+    save-as: '{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json'
+

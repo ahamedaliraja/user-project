@@ -1,2 +1,6 @@
+[uat]
 servera.lab.example.com
+[test]
+serverd.lab.example.com
+[prod]
 serverc.lab.example.com

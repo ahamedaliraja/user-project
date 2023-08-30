@@ -1,0 +1,13 @@
+---
+- name: User Creation
+  hosts: uat
+  vars_files:
+    user_list.yml
+  tasks:
+    - name: User Creation Task
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+        group: devops
+      loop: "{{ users }}"
+      when: "{{ item=='greg' }}"
