@@ -1,2 +1,4 @@
+[dev]
 servera.lab.example.com
-serverc.lab.example.com
+[prod]
+serverd.lab.example.com
