@@ -1,0 +1,13 @@
+---
+- name: User
+  hosts: prod
+  vars_files:
+    user_list.yml
+  tasks:
+    - name: User Task
+      ansible.builtin.user:
+        name: "{{ item }}" 
+        group: devops
+        state: present
+      loop: "{{ users }}"
+      when: "{{ item=='mark' }}"
